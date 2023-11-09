@@ -17,7 +17,7 @@ export class Traceroute extends Process {
     const regex = /^traceroute\sto\s(?:[a-zA-Z0-9:.]+)\s\(([a-zA-Z0-9:.]+)\)/
     const parsedData = new RegExp(regex, '').exec(data)
 
-    let result = null
+    let result: string | null = null
     if (parsedData !== null) {
       result = parsedData[1]
     }

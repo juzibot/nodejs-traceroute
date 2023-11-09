@@ -15,7 +15,7 @@ export class Tracert extends Process {
     const regex = /^Tracing\sroute\sto\s([a-zA-Z0-9:.]+)\s(?:\[([a-zA-Z0-9:.]+)\])?/
     const parsedData = new RegExp(regex, '').exec(data)
 
-    let result = null
+    let result: string | null = null
     if (parsedData !== null) {
       if (parsedData[2] !== undefined) {
         result = parsedData[2]
