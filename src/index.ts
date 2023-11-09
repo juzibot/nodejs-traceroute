@@ -15,4 +15,6 @@ export function BuildTraceroute(opts: TracerouteOptions = DEFAULT_TRACE_OPTIONS)
   }
 }
 
-export { Traceroute, Tracert }
+export { DEFAULT_TRACE_OPTIONS }
+export type { TracerouteOptions }
+
