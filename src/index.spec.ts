@@ -1,7 +1,9 @@
 import os from 'os'
 import validator from 'validator'
 
-import { BuildTraceroute, Traceroute, Tracert } from './index'
+import { BuildTraceroute } from './index'
+import { Traceroute } from './traceroute'
+import { Tracert } from './tracert'
 
 describe('BuildTraceroute', () => {
   test('Should create Tracert object when os.platform() is win32', () => {
@@ -75,3 +77,5 @@ describe('BuildTraceroute', () => {
     tracer.trace('github.com')
   })
 })
+
+
