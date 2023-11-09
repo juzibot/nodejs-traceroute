@@ -1,6 +1,6 @@
 {
   "name": "@juzi/nodejs-traceroute",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Node.js wrapper around tracert and traceroute process",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
