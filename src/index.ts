@@ -1,5 +1,6 @@
 import os from 'os'
 
+import { IpVersion } from './flag'
 import { DEFAULT_TRACE_OPTIONS, TracerouteOptions } from './options'
 import { Traceroute } from './traceroute'
 import { Tracert } from './tracert'
@@ -15,6 +16,6 @@ export function BuildTraceroute(opts: TracerouteOptions = DEFAULT_TRACE_OPTIONS)
   }
 }
 
-export { DEFAULT_TRACE_OPTIONS }
+export { DEFAULT_TRACE_OPTIONS, IpVersion }
 export type { TracerouteOptions }
 
