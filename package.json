@@ -1,6 +1,6 @@
 {
-  "name": "nodejs-traceroute",
-  "version": "2.0.1",
+  "name": "@juzi/nodejs-traceroute",
+  "version": "3.0.0",
   "description": "Node.js wrapper around tracert and traceroute process",
   "main": "lib/index.js",
   "scripts": {
@@ -33,5 +33,11 @@
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.4"
-  }
+  },
+  "files": [
+    "example.ts",
+    "tsconfig.json",
+    "lib/**",
+    "src/**"
+  ]
 }

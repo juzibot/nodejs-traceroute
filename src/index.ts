@@ -1,8 +1,18 @@
-import os from 'os';
+import os from 'os'
 
-import { Tracert } from './tracert';
-import { Traceroute } from './traceroute';
+import { DEFAULT_TRACE_OPTIONS, TracerouteOptions } from './options'
+import { Traceroute } from './traceroute'
+import { Tracert } from './tracert'
 
-module.exports = os.platform() === 'win32' ? Tracert : Traceroute;
+export type { Hop } from './process'
+export { parseRttStr } from './utils'
 
-export default os.platform() === 'win32' ? Tracert : Traceroute;
+export function BuildTraceroute(opts: TracerouteOptions = DEFAULT_TRACE_OPTIONS): Traceroute {
+  if (os.platform() === 'win32') {
+    return new Tracert(opts)
+  } else {
+    return new Traceroute(opts)
+  }
+}
+
+export { Traceroute, Tracert }

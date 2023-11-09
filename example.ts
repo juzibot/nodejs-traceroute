@@ -1,22 +1,27 @@
-import Traceroute from './src/index';
+import { time, timeEnd, timeLog } from 'console'
+import { BuildTraceroute } from './src/index'
+
+const label = 'trace'
 
 try {
-    const tracer = new Traceroute();
-    tracer
-        .on('pid', (pid) => {
-            console.log(`pid: ${pid}`);
-        })
-        .on('destination', (destination) => {
-            console.log(`destination: ${destination}`);
-        })
-        .on('hop', (hop) => {
-            console.log(`hop: ${JSON.stringify(hop)}`);
-        })
-        .on('close', (code) => {
-            console.log(`close: code ${code}`);
-        });
+  const tracer = BuildTraceroute()
+  time(label)
+  tracer
+    .on('pid', (pid) => {
+      timeLog(label, `pid: ${pid}`)
+    })
+    .on('destination', (destination) => {
+      timeLog(label, `destination: ${destination}`)
+    })
+    .on('hop', (hop) => {
+      timeLog(label, `hop:`, hop)
+    })
+    .on('close', (code) => {
+      timeLog(label, `close: code ${code}`)
+      timeEnd(label)
+    })
 
-    tracer.trace('github.com');
+  tracer.trace('github.com')
 } catch (ex) {
-    console.log(ex);
+  console.log(ex)
 }
