@@ -15,10 +15,10 @@ By default, the domain name given will be automatically resolved. Explicitly for
 ## Usage Example
 
 ```javascript
-const Traceroute = require('nodejs-traceroute');
+import { BuildTraceroute } from 'nodejs-traceroute'
 
 try {
-    const tracer = new Traceroute();
+    const tracer = BuildTraceroute()
     tracer
         .on('pid', (pid) => {
             console.log(`pid: ${pid}`);
