@@ -1,7 +1,7 @@
-import { ipVersion } from './flag'
+import { IpVersion } from './flag'
 
 export interface TracerouteOptions {
-  ipVersion?: ipVersion
+  ipVersion?: IpVersion
   /**
    * The number of queries to send for each hop.
    * Only valid for traceroute
